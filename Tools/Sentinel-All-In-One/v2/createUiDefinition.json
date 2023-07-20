@@ -624,7 +624,7 @@
             "workspaceName": "[basics('workspaceName')]",
             "dailyQuota": "[basics('dailyQuota')]",
             "dataRetention": "[basics('dataRetention')]",
-            "pricingTierLA": "[basics('pricingTierLA')]",
+            "pricingTier": "[basics('pricingTier')]",
             "capacityReservationLA": "[basics('capacityReservationLA')]",
             "pricingTierSentinel": "[basics('pricingTierSentinel')]",
             "capacityReservationSentinel": "[basics('capacityReservationSentinel')]",
