@@ -65,7 +65,7 @@
                 "label": "Number of days of retention",
                 "placeholder": "",
                 "defaultValue": "90",
-                "toolTip": "Number of days for Hot Retention - Maximum of 730 days",
+                "toolTip": "Only numbers allowed",
                 "constraints": {
                     "required": true,
                     "regex": "([3-8][0-9]|9[0-9]|[1-6][0-9]{2}|7[0-2][0-9]|730)",
@@ -74,9 +74,9 @@
                 "visible": true
             },
             {
-                "name": "pricingTier",
+                "name": "pricingTierLA",
                 "type": "Microsoft.Common.DropDown",
-                "label": "Select pricing tier for Sentinel and Log Analytics.",
+                "label": "Select pricing tier for Log Analytics",
                 "placeholder": "",
                 "multiselect": false,
                 "toolTip": "Visit [Azure Monitor Pricing page](https://azure.microsoft.com/pricing/details/monitor/) for more information.",
@@ -97,9 +97,9 @@
                 "visible": true
             },
             {
-                "name": "capacityReservation",
+                "name": "capacityReservationLA",
                 "type": "Microsoft.Common.DropDown",
-                "label": "Select Commitment Tier for Sentinel and Log Analytics",
+                "label": "Select Commitment Tier for Log Analytics",
                 "placeholder": "",
                 "multiselect": false,
                 "defaultValue": 100,
@@ -141,7 +141,77 @@
                     ],
                     "required": true
                 },
-                "visible": "[if(equals(basics('pricingTier'),'CapacityReservation'), true, false)]"
+                "visible": "[if(equals(basics('pricingTierLA'),'CapacityReservation'), true, false)]"
+            },
+            {
+                "name": "pricingTierSentinel",
+                "type": "Microsoft.Common.DropDown",
+                "label": "Select pricing tier for Sentinel",
+                "placeholder": "",
+                "multiselect": false,
+                "toolTip": "Visit [Microsoft Sentinel Pricing page](https://azure.microsoft.com/pricing/details/microsoft-sentinel) for more information.",
+                "defaultValue": [{"value": "PerGB"}],
+                "constraints": {
+                    "allowedValues": [
+                        {
+                            "label": "Pay-as-you-go",
+                            "value": "PerGB"
+                        },
+                        {
+                            "label": "Commitment Tier",
+                            "value": "CapacityReservation"
+                        }
+                    ],
+                    "required": true
+                },
+                "visible": true
+            },
+            {
+                "name": "capacityReservationSentinel",
+                "type": "Microsoft.Common.DropDown",
+                "label": "Select Commitment Tier for Sentinel",
+                "placeholder": "",
+                "multiselect": false,
+                "defaultValue": 100,
+                "toolTip": "Select the Commitment Tier in GB/day",
+                "constraints": {
+                    "allowedValues": [
+                        {
+                            "label": "100 GB",
+                            "value": 100
+                        },
+                        {
+                            "label": "200 GB",
+                            "value": 200
+                        },
+                        {
+                            "label": "300 GB",
+                            "value": 300
+                        },
+                        {
+                            "label": "400 GB",
+                            "value": 400
+                        },
+                        {
+                            "label": "500 GB",
+                            "value": 500
+                        },
+                        {
+                            "label": "1000 GB",
+                            "value": 1000
+                        },
+                        {
+                            "label": "2000 GB",
+                            "value": 2000
+                        },
+                        {
+                            "label": "5000 GB",
+                            "value": 5000
+                        }
+                    ],
+                    "required": true
+                },
+                "visible": "[if(equals(basics('pricingTierSentinel'),'CapacityReservation'), true, false)]"
             }
           ],
           "steps": [
@@ -203,7 +273,7 @@
                   }
               ]
           },
-         {
+          {
               "name": "solutions",
               "label": "Content Hub Solutions",
               "elements": [
@@ -624,7 +694,7 @@
             "workspaceName": "[basics('workspaceName')]",
             "dailyQuota": "[basics('dailyQuota')]",
             "dataRetention": "[basics('dataRetention')]",
-            "pricingTier": "[basics('pricingTier')]",
+            "pricingTierLA": "[basics('pricingTierLA')]",
             "capacityReservationLA": "[basics('capacityReservationLA')]",
             "pricingTierSentinel": "[basics('pricingTierSentinel')]",
             "capacityReservationSentinel": "[basics('capacityReservationSentinel')]",
