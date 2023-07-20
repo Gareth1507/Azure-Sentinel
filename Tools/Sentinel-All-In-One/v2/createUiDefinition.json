@@ -464,7 +464,7 @@
             "enableDiagnostics": "[steps('settings').enableDiagnostics]",
             "enableSolutions1P": "[steps('solutions').enableSolutions1P]",
             "enableDataConnectors": "[steps('dataConnectors').enableDataConnectors]",
-            "aadStreams": "[steps('dataConnectors').aadStreams]",,
+            "aadStreams": "[steps('dataConnectors').aadStreams]",
             "enableScheduledAlerts": "[steps('analyticsRules').enableScheduledAlerts]",
             "severityLevels": "[steps('analyticsRules').severityLevels]"
         }
