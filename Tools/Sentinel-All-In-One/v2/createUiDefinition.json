@@ -466,8 +466,7 @@
             "enableDataConnectors": "[steps('dataConnectors').enableDataConnectors]",
             "aadStreams": "[steps('dataConnectors').aadStreams]",,
             "enableScheduledAlerts": "[steps('analyticsRules').enableScheduledAlerts]",
-            "severityLevels": "[steps('analyticsRules').severityLevels]",
-
+            "severityLevels": "[steps('analyticsRules').severityLevels]"
         }
     }
 }
