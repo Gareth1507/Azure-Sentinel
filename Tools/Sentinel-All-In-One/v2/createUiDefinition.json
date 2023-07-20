@@ -37,7 +37,7 @@
                 "label": "Workspace Name",
                 "placeholder": "XXX-log-sentinel-prod-uksouth-01",
                 "defaultValue": "",
-                "toolTip": "The Workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol.",
+                "toolTip": "Enter a Sentinel Workspace name. Replace XXX with a three letter customer identifier",
                 "constraints": {
                     "required": true,
                     "regex": "^[A-Za-z0-9][A-Za-z0-9-]+[A-Za-z0-9]$",
@@ -76,7 +76,7 @@
             {
                 "name": "pricingTier",
                 "type": "Microsoft.Common.DropDown",
-                "label": "Select pricing tier for Sentinel and Log Analytics",
+                "label": "Select pricing tier for Sentinel and Log Analytics.",
                 "placeholder": "",
                 "multiselect": false,
                 "toolTip": "Visit [Azure Monitor Pricing page](https://azure.microsoft.com/pricing/details/monitor/) for more information.",
