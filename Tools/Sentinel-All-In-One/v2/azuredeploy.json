@@ -129,13 +129,6 @@
         "enableDiagnostics": {
             "type": "bool"
         },
-        "enableMLAlerts": {
-            "type": "bool",
-            "metadata": {
-                "description": "Enable ML Behavior Analytics rules"
-            },
-            "defaultValue": false
-        },
         "enableScheduledAlerts": {
             "type": "bool",
             "metadata": {
