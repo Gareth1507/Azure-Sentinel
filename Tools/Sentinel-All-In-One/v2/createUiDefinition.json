@@ -468,5 +468,5 @@
             "enableScheduledAlerts": "[steps('analyticsRules').enableScheduledAlerts]",
             "severityLevels": "[steps('analyticsRules').severityLevels]"
         }
-    }
+    ]
 }
